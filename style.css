@@ -1,130 +1,547 @@
+/* =========================
+GLOBAL STYLES
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(135deg, #ffe91f, #04040e);
-  color: rgb(0, 0, 0);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  line-height: 1.6;
 }
 
-.navbar {
+/* =========================
+HEADER
+========================= */
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgb(87, 84, 84);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  padding: 20px 50px;
+
+  background: #000;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  box-shadow: 0 2px 10px rgba(255, 215, 0, .3);
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  color: #ffe91f;
+  color: gold;
 }
 
-.nav-links {
+/* =========================
+NAVBAR
+========================= */
+
+.navbar ul {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   list-style: none;
 }
 
-.nav-links a {
+.navbar a {
   text-decoration: none;
-  color: #ffffff;
-  transition: 0.3s;
+  color: white;
+  font-weight: bold;
+  transition: .3s;
 }
 
-.nav-links a:hover {
-  color: #ffe91f;
+.navbar a:hover {
+  color: gold;
 }
+
+.credits-display {
+  color: gold;
+  font-weight: bold;
+}
+
+/* =========================
+HERO
+========================= */
 
 .hero {
   text-align: center;
-  margin: 40px 0;
+  padding: 120px 20px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, .5),
+      rgba(0, 0, 0, .8));
 }
 
-.hero h2 {
-  font-size: 32px;
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: gold;
 }
 
 .hero p {
-  opacity: 0.8;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
-.game-container {
+.play-btn {
+  display: inline-block;
+
+  text-decoration: none;
+
+  padding: 15px 40px;
+
+  background: gold;
+
+  color: black;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+
+  transition: .3s;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+GAME SECTION
+========================= */
+
+.game-section {
+  padding: 80px 20px;
   text-align: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 90px);
+/* =========================
+SLOT MACHINE
+========================= */
+
+.machine {
+
+  width: 500px;
+
+  max-width: 95%;
+
+  margin: auto;
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  border: 8px solid gold;
+
+  background: #000;
+
+  box-shadow:
+    0 0 20px gold,
+    0 0 50px rgba(255, 215, 0, .5);
+}
+
+.machine h2 {
+  margin-bottom: 20px;
+  color: gold;
+}
+
+/* =========================
+STATS
+========================= */
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
   gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.stats p {
+  font-weight: bold;
+}
+
+/* =========================
+BET CONTROLS
+========================= */
+
+.bet-controls {
+  margin-bottom: 25px;
+}
+
+.bet-controls button {
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: gold;
+
+  color: black;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  margin: 0 10px;
+}
+
+.bet-controls button:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+SLOT GRID
+========================= */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 100px);
+
+  gap: 15px;
+
   justify-content: center;
+
   margin: 30px 0;
 }
 
 .cell {
-  width: 90px;
-  height: 90px;
-  background: #0f1301;
-  color: #ffffff;
-  font-size: 28px;
+
+  width: 100px;
+  height: 100px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: #111;
+
+  border: 2px solid gold;
+
   border-radius: 15px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 45px;
+
+  transition: .3s;
 }
 
+.win {
+  background: gold;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* =========================
+SPIN BUTTON
+========================= */
 
 #spin-btn {
-  padding: 12px 30px;
-  font-size: 18px;
+
+  padding: 15px 50px;
+
   border: none;
-  border-radius: 25px;
-  background: #0f1301;
-  color: white;
+
+  border-radius: 30px;
+
+  background: gold;
+
+  color: black;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 #spin-btn:hover {
-  background: #ff9500;
   transform: scale(1.05);
 }
 
+#spin-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   DEPOSIT BUTTON
+========================= */
+
+#deposit-btn {
+
+  margin-top: 15px;
+
+  padding: 12px 30px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(45deg,
+      #00c853,
+      #69f0ae);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  box-shadow:
+    0 0 10px rgba(0, 200, 83, .5);
+}
+
+#deposit-btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(0, 200, 83, .8);
+}
+
+#deposit-btn:active {
+
+  transform: scale(.97);
+}
+
+.button-group {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 20px;
+
+  flex-wrap: wrap;
+}
+
+.deposit-section {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-10px);
+
+  transition: .4s ease;
+
+  margin-top: 20px;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.deposit-section.show {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+#deposit-amount {
+  padding: 12px;
+
+  width: 180px;
+
+  border: 2px solid gold;
+
+  border-radius: 25px;
+
+  background: #111;
+
+  color: white;
+
+  outline: none;
+}
+
+#deposit-amount::placeholder {
+  color: #aaa;
+}
+
+/* =========================
+RESULT
+========================= */
+
 #result {
   margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff9500;
+  font-size: 24px;
+  color: gold;
+  min-height: 30px;
 }
+
+/* =========================
+PAYOUT SECTION
+========================= */
+
+.payout-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.payout-section h2 {
+  margin-bottom: 30px;
+  color: gold;
+}
+
+.payout-grid {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.payout-grid div {
+
+  padding: 15px 25px;
+
+  border: 2px solid gold;
+
+  border-radius: 10px;
+
+  background: #000;
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about {
+
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+.about h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* =========================
+FOOTER
+========================= */
 
 .footer {
-  margin-top: auto;
-  text-align: center;
-  padding: 20px;
-  background: #333;
+
+  background: #000;
+
+  padding: 50px 20px;
+
+  margin-top: 50px;
 }
 
-@media (max-width: 600px) {
+.footer-content {
+
+  display: flex;
+
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+
+  gap: 40px;
+
+  margin-bottom: 20px;
+}
+
+.footer h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.footer a {
+
+  display: block;
+
+  text-decoration: none;
+
+  color: white;
+
+  margin: 8px 0;
+}
+
+.footer a:hover {
+  color: gold;
+}
+
+.footer hr {
+  margin: 20px 0;
+  border-color: #333;
+}
+
+.footer p {
+  text-align: center;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
   .grid {
-    grid-template-columns: repeat(3, 70px);
+    grid-template-columns:
+      repeat(3, 80px);
   }
 
   .cell {
-    width: 70px;
-    height: 70px;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 35px;
   }
 }
