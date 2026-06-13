@@ -39,7 +39,10 @@ slot-machine/
 
 ##  Screenshot
 
-<img width="1366" height="768" alt="Screenshot 2026-03-26 204158" src="https://github.com/user-attachments/assets/99acb849-ee33-4ab1-bb5e-9f78f6a5d344" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2ef21024-5624-4473-9ffb-6c89dc774cc4" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2410f754-7403-42f6-a0b4-c71ea6abc8af" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/68b7a629-1dae-43c7-b7cf-cf5146a8ce26" />
+
 
 
 ---
